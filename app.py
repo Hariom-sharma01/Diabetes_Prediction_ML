@@ -96,6 +96,7 @@ main {
 }
 
 .footer-container {
+            width:100%
             text-align: center;
             margin-top: 50px;
             padding: 10px;
