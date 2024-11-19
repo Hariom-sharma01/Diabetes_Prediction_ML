@@ -95,11 +95,17 @@ main {
     background-color: #45a049;
 }
 
-footer {
-    text-align: center;
-    padding: 15px;
-    background-color: #333;
-    color: white;
+.footer-container {
+            text-align: center;
+            margin-top: 50px;
+            padding: 10px;
+            background-color: #6200ea;
+            color: white;
+            border-radius: 8px;
+}
+.footer-container p {
+            margin: 0;
+            font-size: 0.9rem;
 }
 
     </style>
@@ -210,3 +216,11 @@ if submit_button:
             f"<p style='text-align:center; color:{color}; font-size:20px;'>{result}</p>", 
             unsafe_allow_html=True
         )
+st.markdown(
+    """
+    <div class="footer-container">
+        <p>© 2024 Diabetes Prediction App. All rights reserved.</p>
+    </div>
+    """,
+    unsafe_allow_html=True,
+)        
