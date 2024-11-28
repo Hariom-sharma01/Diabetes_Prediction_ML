@@ -5,7 +5,6 @@ from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
 import matplotlib.pyplot as plt
 
-# Load and preprocess data
 data = pd.read_csv(r"./diabetes_prediction_dataset.csv")
 data["gender"] = data["gender"].map({"Male": 1, "Female": 2, "Other": 3})
 data["smoking_history"] = data["smoking_history"].map({
@@ -18,6 +17,7 @@ x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2, random_
 
 rf_model = RandomForestClassifier()
 rf_model.fit(x_train, y_train)
+
 
 # Apply custom CSS styling
 st.markdown("""
@@ -208,7 +208,7 @@ if submit_button:
                                 bmi, hba1c, blood_glucose]])
         
         # Placeholder for prediction model (replace this with actual model logic)
-        prediction = np.random.choice([0, 1])  # Dummy prediction for demonstration
+        prediction = rf_model.predict(input_data)  # Dummy prediction for demonstration
         result = "Diabetic." if prediction == 1 else "Not Diabetic."
         color = "red" if prediction == 1 else "green"
 
