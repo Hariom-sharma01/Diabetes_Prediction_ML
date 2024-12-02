@@ -203,9 +203,9 @@ if submit_button:
         heart_disease_value = 1 if heart_disease == "Yes" else 0
 
         # Create input array for prediction
-        input_data = np.array([[age, gender_value, hypertension_value, 
-                                heart_disease_value, smoking_value, 
-                                bmi, hba1c, blood_glucose]])
+        input_data = pd.DataFrame(
+    [[age, gender_value, hypertension_value, heart_disease_value, smoking_value, bmi, hba1c, blood_glucose]],
+    columns=x.columns )
         
         # Placeholder for prediction model (replace this with actual model logic)
         prediction = rf_model.predict(input_data)  # Dummy prediction for demonstration
